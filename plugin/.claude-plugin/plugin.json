@@ -1,11 +1,20 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-plugin-manifest.json",
   "name": "infographics",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Page-level design principles for reports, dashboards and infographics that busy readers must grasp in five seconds. Distilled from Tufte, Few, Knaflic and Cairo.",
-  "author": { "name": "Artem Yakimenko" },
+  "author": {
+    "name": "Artem Yakimenko"
+  },
   "homepage": "https://github.com/Temikus/claude-skill-infographics",
   "repository": "https://github.com/Temikus/claude-skill-infographics",
   "license": "Apache-2.0",
-  "keywords": ["report", "dashboard", "infographic", "data-visualization", "finance", "executive"]
+  "keywords": [
+    "report",
+    "dashboard",
+    "infographic",
+    "data-visualization",
+    "finance",
+    "executive"
+  ]
 }
