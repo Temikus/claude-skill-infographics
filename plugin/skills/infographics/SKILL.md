@@ -29,6 +29,8 @@ Do these in order. Message before layout, layout before charts, charts before co
    reader would otherwise have to find.
 4. **Three takeaways, numbered.** Headline on its own line, one or two plain
    sentences under it. Each carries a number. Nothing that is not in the data.
+   Compute every count and name list in a heading from the data, never type it
+   from memory. "Half were new" is wrong when the data says 5 of 10 and 7 of 10.
 5. **Title every section with its finding, not its topic.** "Hosting cost grew
    12% a year", not "Cost over time". Topic, period and units go in a smaller
    subtitle. A reader who only reads headings should get the whole story.
@@ -36,6 +38,7 @@ Do these in order. Message before layout, layout before charts, charts before co
    things that must be compared share one scale side by side, never one big chart
    and one hidden chart.
 7. **Label directly, drop the legend.** Series name and end value at the line end.
+   Converging series end close together, so push their end labels apart.
    One highlight colour for the thing that matters, greys for context, black for
    actuals. Validate new categorical colours with the dataviz skill; grey may fail
    its chroma check when it is meant to read as background.
@@ -46,10 +49,20 @@ Do these in order. Message before layout, layout before charts, charts before co
    reconciliation tables, secondary charts go below the fold or behind a toggle.
    The above-the-fold view fits one screen.
 10. **State reliability plainly.** One sentence: how it was tested, typical miss,
-    worst miss, and what caused the worst miss. A range that is wide on purpose gets
-    a one-line explanation beside the chart, not a footnote.
+    worst miss, and what caused the worst miss. A range that is wide on purpose, or
+    a visible artefact of how the data was collected, gets a one-line explanation
+    beside the chart, not a footnote.
 11. **Render and look.** View the output as the reader will, at their screen size.
-    Check the list under "Before shipping". Fix, re-render, look again.
+    Check the list under "Before shipping". Fix, re-render, look again. Headless
+    Chrome works without extra installs (macOS path shown):
+
+    ```
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+      --hide-scrollbars --window-size=1440,900 --screenshot=fold.png file:///path/page.html
+    ```
+
+    There is no full-page flag. Render at a tall window size and trim the blank tail
+    with ImageMagick, using the page background colour.
 
 ## Chart per question
 
@@ -71,6 +84,8 @@ Do these in order. Message before layout, layout before charts, charts before co
 - Negative growth reads badly as "rose -1%". Write "moved -1%" or "was flat".
 - Indicative totals that mix forecast and contract run-rates are labelled indicative,
   with the composition spelled out.
+- Dataset size (rows, years covered, records) is metadata, not a finding. It goes in
+  the subtitle, never in a stat block.
 
 ## Before shipping
 
@@ -84,7 +99,14 @@ Look at a rendered screenshot, then hover or interact once, and check:
 - One font family throughout, including inside charts.
 - Headings state findings. Read only the headings: does the story hold?
 - The lede, hero, takeaways and first chart fit one screen at a typical laptop width.
+- The lede is two lines at that width with no orphan word on a third line.
+- Every claim in a heading or takeaway matches the numbers shown under it.
 - The reliability sentence and the range explanation are present and honest.
+
+## Example
+
+The same data rendered with and without this skill, screenshots side by side:
+https://github.com/Temikus/claude-skill-infographics/tree/main/examples
 
 ## Skeleton
 

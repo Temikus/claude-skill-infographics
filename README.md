@@ -24,13 +24,13 @@ As a project skill, versioned with your repo:
 
 ```
 git clone https://github.com/Temikus/claude-skill-infographics /tmp/infographics
-cp -R /tmp/infographics/skills/infographics .claude/skills/
+cp -R /tmp/infographics/plugin/skills/infographics .claude/skills/
 ```
 
 As a personal skill:
 
 ```
-cp -R skills/infographics ~/.claude/skills/
+cp -R plugin/skills/infographics ~/.claude/skills/
 ```
 
 ## Use
@@ -39,13 +39,25 @@ Triggers on requests to make a report, dashboard or summary "scannable", "at a
 glance", "for Finance", "for leadership" or infographic-like. Invoke directly with
 `/infographics`.
 
+## Example
+
+Same data, same numbers, two pages. Left without the skill, right with it. See
+[examples/README.md](examples/README.md) for the full-page renders and how to rebuild.
+
+![side by side](examples/baby-names/side-by-side.png)
+
 ## Layout
 
 ```
-skills/infographics/
-  SKILL.md                    procedure, chart-per-question table, checklist
-  references/principles.md    the principles, how each was applied, sources
+plugin/                       what `/plugin install` fetches (git-subdir source)
+  .claude-plugin/plugin.json
+  skills/infographics/
+    SKILL.md                  procedure, chart-per-question table, checklist
+    references/principles.md  the principles, how each was applied, sources
+examples/baby-names/          with-skill and without-skill pages, build scripts, screenshots
 ```
+
+`just examples` rebuilds the example pages and screenshots.
 
 ## License
 
