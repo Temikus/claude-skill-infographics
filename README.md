@@ -3,6 +3,10 @@
 A Claude Code skill: page-level design principles for reports, dashboards and
 infographics that busy, non-technical readers must grasp in five seconds.
 
+Same data, same numbers. Left without the skill, right with it.
+
+![Without the skill on the left, with it on the right](examples/baby-names/side-by-side.png)
+
 Distilled from Tufte (data-ink, small multiples, sparklines), Few (single screen,
 context beside every number), Knaflic (action titles, one highlight colour) and
 Cairo (truthful before beautiful). Tool-agnostic: applies to HTML, slides, PDF,
@@ -41,10 +45,8 @@ glance", "for Finance", "for leadership" or infographic-like. Invoke directly wi
 
 ## Example
 
-Same data, same numbers, two pages. Left without the skill, right with it. See
-[examples/README.md](examples/README.md) for the full-page renders and how to rebuild.
-
-![side by side](examples/baby-names/side-by-side.png)
+[examples/README.md](examples/README.md) has the full-page renders of both pages
+above and how to rebuild them.
 
 ## Layout
 
